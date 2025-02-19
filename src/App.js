@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import ParticlesBackground from './components/ParticlesBackground/ParticlesBackground';
+import AppContainer from './components/ParticlesBackground/UIcomponents/AppContainer';
+import ParticlesWrapper from './components/ParticlesBackground/UIcomponents/ParticlesWrapper';
+import TitleContainer from './components/ParticlesBackground/UIcomponents/TitleContainer';
+import Name from './components/ParticlesBackground/UIcomponents/Name';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <ParticlesWrapper>
+        <ParticlesBackground id='particles' />
+      </ParticlesWrapper>
+      <TitleContainer>
+        <Name data-text='Petar Stanković'>Petar Stanković</Name>
+      </TitleContainer>
+    </AppContainer>
   );
 }
 
