@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/petar-stankovic-portfolio/static/js/main.f989e0fb.js",
+    "static/js/453.93e1a814.chunk.js": "/petar-stankovic-portfolio/static/js/453.93e1a814.chunk.js",
+    "index.html": "/petar-stankovic-portfolio/index.html",
+    "main.f989e0fb.js.map": "/petar-stankovic-portfolio/static/js/main.f989e0fb.js.map",
+    "453.93e1a814.chunk.js.map": "/petar-stankovic-portfolio/static/js/453.93e1a814.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f989e0fb.js"
+  ]
+}
