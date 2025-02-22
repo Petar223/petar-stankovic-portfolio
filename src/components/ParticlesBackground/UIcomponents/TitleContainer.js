@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const TitleContainer = styled.div`
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

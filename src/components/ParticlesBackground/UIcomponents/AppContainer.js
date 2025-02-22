@@ -5,7 +5,5 @@ const AppContainer = styled.div`
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  width: 100vw;
-  height: 100vh;
 `;
 export default AppContainer;
