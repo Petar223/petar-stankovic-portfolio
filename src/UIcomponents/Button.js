@@ -78,6 +78,10 @@ const SlidingButton = styled.button`
       height: 100%;
     }
   }
+
+  @media (max-width: 480px) {
+    min-width: 100%;
+  }
 `;
 
 const Button = ({ children, onClick, type = 'button' }) => {
