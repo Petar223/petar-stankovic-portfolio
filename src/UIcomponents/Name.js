@@ -27,6 +27,18 @@ const shift = keyframes`
   }
 `;
 
+const glitchEffect = keyframes`
+  0% {
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.7), -2px -2px 4px rgba(0, 255, 255, 0.7);
+  }
+  50% {
+    text-shadow: -2px -2px 4px rgba(255, 0, 0, 0.7), 2px 2px 4px rgba(0, 255, 255, 0.7);
+  }
+  100% {
+    text-shadow: 2px -2px 4px rgba(255, 0, 0, 0.7), -2px 2px 4px rgba(0, 255, 255, 0.7);
+  }
+`;
+
 const Name = styled.p`
   position: relative;
   font-size: 75px;
@@ -35,5 +47,14 @@ const Name = styled.p`
   letter-spacing: 3px;
   animation: ${shift} 4s ease-in-out infinite alternate;
   z-index: 1;
+  cursor: pointer; /* Da pokazuje da je klikabilno */
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    animation: ${glitchEffect} 0.3s infinite alternate,
+      ${shift} 4s ease-in-out infinite alternate;
+    transform: scale(1.05); /* Lagano povećanje na hover */
+  }
 `;
+
 export default Name;
