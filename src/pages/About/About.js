@@ -16,21 +16,47 @@ const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
   text-align: left;
-  padding: 0 10%;
+  padding: 10%;
   gap: 50px;
   animation: ${pulseAnimation} 1.5s ease-in-out forwards;
   flex-direction: column;
+  overflow-y: auto;
+  min-height: 100vh;
+
+  @media (max-width: 800px) {
+    padding: 5%;
+    gap: 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2%;
+    gap: 20px;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-start;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -42,6 +68,14 @@ const AboutTitle = styled.h2`
   font-size: 40px;
   margin-bottom: 20px;
   color: #c5c6c9;
+
+  @media (max-width: 800px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 26px;
+  }
 `;
 
 const AboutText = styled.p`
@@ -50,6 +84,14 @@ const AboutText = styled.p`
   color: #c5c6c9;
   max-width: 600px;
   text-align: left;
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -59,6 +101,16 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @media (max-width: 800px) {
+    width: 300px;
+    height: 450px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const spinAnimation = keyframes`
