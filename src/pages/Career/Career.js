@@ -173,12 +173,6 @@ const data = {
   ],
   education: [
     {
-      degree: 'Graduated Civil Engineer of Professional Studies',
-      institution:
-        'The University of Belgrade, College of Civil Engineering and Geodesy',
-      graduation_year: 2017,
-    },
-    {
       course: 'Frontend Development',
       institution: 'Code Academy, Comtrade Belgrade',
       duration: 'February 2019 – September 2019',
@@ -188,6 +182,12 @@ const data = {
         technologies: ['HTML5', 'CSS3', 'Vanilla JS (ES5, ES6)'],
         github_link: 'https://github.com/Petar223/Movie-CLUB',
       },
+    },
+    {
+      degree: 'Graduated Civil Engineer of Professional Studies',
+      institution:
+        'The University of Belgrade, College of Civil Engineering and Geodesy',
+      graduation_year: 2017,
     },
   ],
   portfolio: [
