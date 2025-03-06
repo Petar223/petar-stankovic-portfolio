@@ -27,8 +27,10 @@ const ExperienceContainer = styled.div`
 
 const CompanyTitle = styled.h3`
   font-size: 20px;
+  border-bottom: 1px solid #ffffff;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 `;
 
 const ProjectContainer = styled.div`

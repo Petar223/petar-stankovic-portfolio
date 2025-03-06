@@ -78,9 +78,8 @@ const data = {
             'JavaScript',
           ],
           responsibilities: [
-            'Built an admin panel feature in React.js to manage custom keyword groups',
-            'Implemented API-based role management and normalized data for mockup pages',
-            'Collaborated with an external development company to align project requirements',
+            'Built a admin panel feature in React.js to manage custom keyword groups, including a table and add-keyword form, while implementing API-based role management and normalizing data for mockup pages.',
+            'Collaborated closely with an external development company responsible for business logic to align project requirements etc.',
           ],
         },
         {
@@ -96,16 +95,15 @@ const data = {
             'Cypress',
           ],
           responsibilities: [
-            'Developed key pages including targeting, summary, login, and register',
-            'Redesigned pages with Material Design to enhance user experience',
-            'Improved table performance, added search features, and conducted end-to-end tests',
+            'Responsible for development of key pages (targeting, summary, login and register); collaborated with designer in Figma, and independently redesigned with Material Design to enhance user experience.',
+            'Improved large dataset table performance, added search features based on ad operators feedback, and conducted end-to-end tests with Cypress for quality assurance.',
           ],
         },
         {
           name: 'Market Crawler (Internal project)',
           duration: 'April 2021 – September 2023',
           description:
-            'Platform to add specific URLs, test their validity, and collect certain data.',
+            'A platform aimed to add specific URLs, test their validity and reliability, and collect certain data from these pages.',
           technologies: [
             'Angular 15',
             'JavaScript',
@@ -118,7 +116,8 @@ const data = {
         {
           name: 'Audience Manager',
           duration: 'November 2019 – April 2021',
-          description: 'Platform for managing internet advertising campaigns.',
+          description:
+            'A platform for managing internet advertising campaigns, enabling ad operators to create banners and placeholders, launch campaigns, and track metrics.',
           technologies: [
             'TypeScript',
             'CSS',
@@ -130,9 +129,8 @@ const data = {
             'Chai',
           ],
           responsibilities: [
-            'Enhanced layout for better user experience',
-            'Added functionalities like forms and bulk edit options',
-            'Developed an expandable banner with vanilla JS',
+            'Enhanced layout for improved visibility and user experience, adding functionalities like forms and bulk edit options to streamline ad operators tasks.',
+            'Developed an expandable banner with vanilla JS, integrating it with an editing wizard for customizable content, and wrote tests for all new features.',
           ],
         },
       ],
