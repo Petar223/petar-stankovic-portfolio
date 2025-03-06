@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100vh;
     // overflow: hidden;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Roboto Mono', 'DejaVu Sans Mono', Consolas, monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Liberation Mono, "Courier New";
     color: #ffffff;
   }
 

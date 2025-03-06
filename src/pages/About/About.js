@@ -3,13 +3,19 @@ import styled, { keyframes } from 'styled-components';
 import Button from '../../UIcomponents/Button';
 import { useNavigate } from 'react-router-dom';
 
-const pulseAnimation = keyframes`
-  0% {
-    transform: scale(0.3);
-  }
-  100% {
-    transform: scale(1);
-  }
+const slideFromLeft = keyframes`
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+`;
+
+const slideFromRight = keyframes`
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+`;
+
+const slideFromBottom = keyframes`
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 `;
 
 const AboutContainer = styled.div`
@@ -18,7 +24,6 @@ const AboutContainer = styled.div`
   text-align: left;
   padding: 10%;
   gap: 50px;
-  animation: ${pulseAnimation} 1.5s ease-in-out forwards;
   flex-direction: column;
   overflow-y: auto;
   min-height: 100vh;
@@ -36,13 +41,16 @@ const AboutContainer = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: ${(props) => props.justify || 'space-between'};
+  gap: 10px;
+  animation: ${slideFromBottom} 1s ease-out forwards;
 
   @media (max-width: 800px) {
     width: 100%;
   }
 
   @media (max-width: 480px) {
+    flex-direction: column;
     justify-content: center;
     width: 100%;
   }
@@ -62,6 +70,7 @@ const ContentContainer = styled.div`
 const TextContainer = styled.div`
   flex: 1;
   max-width: 600px;
+  animation: ${slideFromLeft} 1s ease-out forwards;
 `;
 
 const AboutTitle = styled.h2`
@@ -101,6 +110,7 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  animation: ${slideFromRight} 1s ease-out forwards;
 
   @media (max-width: 800px) {
     width: 300px;
@@ -151,9 +161,8 @@ function About() {
 
   return (
     <AboutContainer>
-      <ButtonContainer>
-        <Button onClick={() => navigate('/')}>Back to Home</Button>
-      </ButtonContainer>
+      {/* <ButtonContainer justify='flex-end'>
+      </ButtonContainer> */}
       <ContentContainer>
         <TextContainer>
           <AboutTitle>About Me</AboutTitle>
@@ -183,6 +192,10 @@ function About() {
           />
         </ImageContainer>
       </ContentContainer>
+      <ButtonContainer>
+        <Button onClick={() => navigate('/')}>Back to Home</Button>
+        <Button onClick={() => navigate('/career')}>Career Page</Button>
+      </ButtonContainer>
     </AboutContainer>
   );
 }
