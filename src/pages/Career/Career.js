@@ -286,7 +286,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: ${(props) => props.justify || 'space-between'};
   gap: 10px;
-  animation: ${slideFromTop} 1s ease-out forwards;
+  animation: ${slideFromTop} 0.5s ease-out forwards;
 
   @media (max-width: 900px) {
     width: 100%;
