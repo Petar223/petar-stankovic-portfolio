@@ -38,10 +38,13 @@ const Text = styled.p`
 `;
 
 const Strong = styled.strong`
-  color: #ffffff;
+  color: #fff;
   font-size: 18px;
 `;
-
+const LanguagesStrong = styled.strong`
+  color: #c5c6c9;
+  font-size: 18px;
+`;
 const Link = styled.a`
   color: #0077cc;
   text-decoration: none;
@@ -136,10 +139,10 @@ const PersonalInformation = ({ data }) => {
         </Text>
         <List>
           <ListItem>
-            <Strong>Native:</Strong> {data.languages.native}
+            <LanguagesStrong>Native:</LanguagesStrong> {data.languages.native}
           </ListItem>
           <ListItem>
-            <Strong>Working Proficiency:</Strong>{' '}
+            <LanguagesStrong>Working Proficiency:</LanguagesStrong>{' '}
             {data.languages.working_proficiency}
           </ListItem>
         </List>
