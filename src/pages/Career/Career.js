@@ -275,7 +275,7 @@ const BottomSectionContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  animation: ${slideFromBottom} 0.5s ease-out;
+  animation: ${slideFromTop} 0.5s ease-out;
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -286,7 +286,7 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: ${(props) => props.justify || 'space-between'};
   gap: 10px;
-  animation: ${slideFromBottom} 1s ease-out forwards;
+  animation: ${slideFromTop} 1s ease-out forwards;
 
   @media (max-width: 900px) {
     width: 100%;
