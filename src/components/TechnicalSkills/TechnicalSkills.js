@@ -62,8 +62,8 @@ const IconWrapper = styled.div`
 const Tooltip = styled.span`
   position: absolute;
   bottom: -30px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
+  background: #c5c6c9;
+  color: rgba(4, 3, 54);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 12px;

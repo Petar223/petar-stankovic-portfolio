@@ -71,7 +71,7 @@ const Chip = styled.div`
   }
 `;
 
-// Mapa sa ikonama tehnologija
+
 const skillIcons = {
   HTML5: Icons.Html5,
   CSS3: Icons.Css,
@@ -108,7 +108,6 @@ const Education = ({ education }) => {
                 {' - '}
                 {edu.final_project.description}
               </Text>
-              {/* Prikaz čipova za tehnologije */}
               <ChipContainer>
                 {edu.final_project.technologies.map((tech, i) => {
                   const IconComponent = skillIcons[tech];

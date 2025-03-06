@@ -1,11 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import * as Icons from '../Icons'; // Učitava sve ikonice
+import * as Icons from '../Icons';
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 10px;
 `;
 
 const Title = styled.h2`
@@ -38,10 +37,35 @@ const Text = styled.p`
   }
 `;
 
+const Strong = styled.strong`
+  color: #ffffff;
+  font-size: 18px;
+`;
+
+const Link = styled.a`
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const IconContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-top: 20px;
+`;
+
+const List = styled.ul`
+  margin-left: 20px;
+`;
+
+const ListItem = styled.li`
+  font-size: 18px; /* Povećan font */
+  color: #c5c6c9;
+  margin-bottom: 5px;
 `;
 
 const glitchEffect = keyframes`
@@ -86,8 +110,6 @@ const ContentWrapper = styled.div`
   padding: 20px;
 `;
 
-// Glitch animacija
-
 const contactIcons = {
   LinkedIn: Icons.Icons8Linkedin,
   GitHub: Icons.Github,
@@ -97,17 +119,30 @@ const PersonalInformation = ({ data }) => {
   return (
     <Section>
       <Title>Personal Information</Title>
+
       <ContentWrapper>
         <Text>
-          <strong>Email:</strong> {data.email}
+          <Strong>Email:</Strong>{' '}
+          <Link href={`mailto:${data.email}`}>{data.email}</Link>
         </Text>
         <Text>
-          <strong>Mobile:</strong> {data.mobile}
+          <Strong>Mobile:</Strong> {data.mobile}
         </Text>
         <Text>
-          <strong>Languages:</strong> Native: {data.languages.native}, Working
-          Proficiency: {data.languages.working_proficiency}
+          <Strong>Location:</Strong> {data.location}
         </Text>
+        <Text>
+          <Strong>Languages:</Strong>
+        </Text>
+        <List>
+          <ListItem>
+            <Strong>Native:</Strong> {data.languages.native}
+          </ListItem>
+          <ListItem>
+            <Strong>Working Proficiency:</Strong>{' '}
+            {data.languages.working_proficiency}
+          </ListItem>
+        </List>
         <IconContainer>
           <IconLink href={data.linkedin} target='_blank'>
             {contactIcons.LinkedIn && <contactIcons.LinkedIn />}

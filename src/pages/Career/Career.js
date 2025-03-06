@@ -13,6 +13,7 @@ const data = {
     name: 'Petar Stanković',
     email: 'stankovicpetar23@gmail.com',
     mobile: '+381692225657',
+    location: 'Belgrade, Serbia',
     linkedin: 'https://www.linkedin.com/in/petar-stanković/',
     github: 'https://github.com/Petar223',
     languages: {
@@ -195,7 +196,6 @@ const data = {
   ],
 };
 
-// Animacije
 const slideFromTop = keyframes`
   0% { opacity: 0; transform: translateY(-30px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -303,6 +303,9 @@ function Career() {
 
   return (
     <PageContainer>
+      <ButtonContainer>
+        <Button onClick={() => navigate('/about')}>About Me</Button>
+      </ButtonContainer>
       <TopSectionContainer>
         <SectionWrapper>
           <PersonalInformation data={data.personal_information} />
@@ -326,9 +329,6 @@ function Career() {
           <ProfessionalExperience experience={data.professional_experience} />
         </SectionWrapper>
       </BottomSectionContainer>
-      <ButtonContainer>
-        <Button onClick={() => navigate('/about')}>About Page</Button>
-      </ButtonContainer>
     </PageContainer>
   );
 }

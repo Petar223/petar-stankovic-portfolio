@@ -38,19 +38,6 @@ const ProjectTitle = styled.h3`
   margin-bottom: 10px;
 `;
 
-const ProjectLink = styled.a`
-  font-size: 14px;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 5px 10px;
-  transition: all 0.2s ease-in-out;
-  margin-bottom: 10px;
-  &:hover {
-    color: #ffffff;
-  }
-`;
-
 const Text = styled.p`
   font-size: 16px;
   color: #c5c6c9;
@@ -111,7 +98,16 @@ const Chip = styled.div`
   }
 `;
 
-// Mapa sa ikonama tehnologija
+const Link = styled.a`
+  color: #0077cc;
+  margin: 0 0 10px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const skillIcons = {
   JavaScript: Icons.Javascript,
   TypeScript: Icons.Typescript,
@@ -147,13 +143,13 @@ const PersonalProjects = ({ projects }) => {
               {project.name} {project.duration && `(${project.duration})`}
             </ProjectTitle>
             {project.name === 'Dokko filler' && (
-              <ProjectLink
+              <Link
                 href='https://master.d3b4iv7p0rq0yz.amplifyapp.com/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
                 Web App
-              </ProjectLink>
+              </Link>
             )}
           </ProjectTitleContainer>
           {project.description && <Text>{project.description}</Text>}
