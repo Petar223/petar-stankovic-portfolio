@@ -161,8 +161,6 @@ function About() {
 
   return (
     <AboutContainer>
-      {/* <ButtonContainer justify='flex-end'>
-      </ButtonContainer> */}
       <ContentContainer>
         <TextContainer>
           <AboutTitle>About Me</AboutTitle>

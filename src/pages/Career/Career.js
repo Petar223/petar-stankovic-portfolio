@@ -5,7 +5,6 @@ import TechnicalSkills from '../../components/TechnicalSkills/TechnicalSkills';
 import ProfessionalExperience from '../../components/ProfessionalExperience/ProfessionalExperience';
 import PersonalProjects from '../../components/PersonalProjects/PersonalProjects';
 import Education from '../../components/Education/Education';
-import Portfolio from '../../components/Portfolio/Portfolio';
 import Button from '../../UIcomponents/Button';
 import { useNavigate } from 'react-router-dom';
 
@@ -204,11 +203,6 @@ const slideFromTop = keyframes`
 
 const slideFromLeft = keyframes`
   0% { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 1; transform: translateX(0); }
-`;
-
-const slideFromRight = keyframes`
-  0% { opacity: 0; transform: translateX(30px); }
   100% { opacity: 1; transform: translateX(0); }
 `;
 
