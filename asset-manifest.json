@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/petar-stankovic-portfolio/static/js/main.20d3e12f.js",
+    "main.js": "/petar-stankovic-portfolio/static/js/main.ffa1b676.js",
     "static/js/453.93e1a814.chunk.js": "/petar-stankovic-portfolio/static/js/453.93e1a814.chunk.js",
     "index.html": "/petar-stankovic-portfolio/index.html",
-    "main.20d3e12f.js.map": "/petar-stankovic-portfolio/static/js/main.20d3e12f.js.map",
+    "main.ffa1b676.js.map": "/petar-stankovic-portfolio/static/js/main.ffa1b676.js.map",
     "453.93e1a814.chunk.js.map": "/petar-stankovic-portfolio/static/js/453.93e1a814.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.20d3e12f.js"
+    "static/js/main.ffa1b676.js"
   ]
 }
