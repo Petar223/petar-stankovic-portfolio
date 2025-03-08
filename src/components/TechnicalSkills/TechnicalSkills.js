@@ -1,26 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as Icons from '../Icons'; // Učitava sve ikonice
+import Title from '../../UIcomponents/Title';
+import { skillIcons } from '../constants/constants';
 
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`;
-
-const Title = styled.h2`
-  font-size: 24px;
-  color: #c5c6c9;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-  }
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-    font-size: 22px;
-  }
 `;
 
 const IconContainer = styled.div`
@@ -58,7 +44,6 @@ const IconWrapper = styled.div`
   }
 `;
 
-// Tooltip za prikaz naziva tehnologije
 const Tooltip = styled.span`
   position: absolute;
   bottom: -30px;
@@ -72,27 +57,6 @@ const Tooltip = styled.span`
   opacity: 0;
   transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 `;
-
-const skillIcons = {
-  JavaScript: Icons.Javascript,
-  TypeScript: Icons.Typescript,
-  HTML: Icons.Html5,
-  CSS: Icons.Css,
-  Angular: Icons.Angular,
-  React: Icons.React,
-  'Redux-Saga': Icons.Reduxsaga,
-  Cypress: Icons.Cypress,
-  JSON: Icons.Json,
-  Git: Icons.Github,
-  Jira: Icons.Jira,
-  Tailwind: Icons.Tailwindcss,
-  Docker: Icons.Docker,
-  Sass: Icons.Sass,
-  Webpack: Icons.Webpack,
-  'styled-components': Icons.Styledcomponents,
-  MongoDB: Icons.Mongodb,
-  Axios: Icons.Axios,
-};
 
 const TechnicalSkills = ({ skills }) => {
   return (
