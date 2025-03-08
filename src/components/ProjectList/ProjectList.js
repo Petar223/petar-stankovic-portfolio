@@ -57,7 +57,7 @@ const ListItem = styled.li`
     left: 14px;
     top: 13px;
     height: calc(100% - 10px);
-    width: 2px;
+    width: 1px;
     background-color: #c5c6c9;
     z-index: 0;
   }
