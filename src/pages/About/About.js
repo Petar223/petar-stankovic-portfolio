@@ -19,6 +19,21 @@ const slideFromBottom = keyframes`
   100% { opacity: 1; transform: translateY(0); }
 `;
 
+const glitchEffect = keyframes`
+  0% {
+    transform: translate(1px, -1px);
+    filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.7)) drop-shadow(-2px -2px 4px rgba(0, 255, 255, 0.7));
+  }
+  50% {
+    transform: translate(-1px, 1px);
+    filter: drop-shadow(-2px -2px 4px rgba(255, 0, 0, 0.7)) drop-shadow(2px 2px 4px rgba(0, 255, 255, 0.7));
+  }
+  100% {
+    transform: translate(1px, -1px);
+    filter: drop-shadow(2px -2px 4px rgba(255, 0, 0, 0.7)) drop-shadow(-2px 2px 4px rgba(0, 255, 255, 0.7));
+  }
+`;
+
 const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -156,10 +171,10 @@ const StyledCvFile = styled(CvFile)`
   width: 50px;
   height: 50px;
   fill: #c5c6c9;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.2s ease-in-out, fill 0.2s ease-in-out;
 
   &:hover {
-    fill: #4a90e2;
+    animation: ${glitchEffect} 0.5s infinite alternate;
   }
 `;
 
