@@ -29,12 +29,12 @@ const AboutContainer = styled.div`
   min-height: 100vh;
 
   @media (max-width: 800px) {
-    padding: 5%;
+    padding: 10%;
     gap: 30px;
   }
 
   @media (max-width: 480px) {
-    padding: 2%;
+    padding: 5%;
     gap: 20px;
   }
 `;
@@ -144,14 +144,11 @@ const ProfileImage = styled.img`
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out,
-    opacity 0.5s ease-in-out;
+
   display: ${(props) => (props.isLoaded ? 'block' : 'none')};
 
-  &:hover {
-    transform: scale(1.08);
-    box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.6);
-    opacity: 0.9;
+  @media (max-width: 480px) {
+    border-radius: 0;
   }
 `;
 

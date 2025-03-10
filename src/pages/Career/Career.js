@@ -25,6 +25,7 @@ const PageContainer = styled.div`
   gap: 20px;
   padding: 20px;
   margin: 0 auto;
+  max-width: 1600px;
 
   @media (max-width: 768px) {
     padding: 10px;
