@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Button from '../../UIcomponents/Button';
 import { useNavigate } from 'react-router-dom';
+import { CvFile } from '../../components/Icons';
 
 const slideFromLeft = keyframes`
   0% { opacity: 0; transform: translateX(-30px); }
@@ -75,7 +76,6 @@ const TextContainer = styled.div`
 
 const AboutTitle = styled.h2`
   font-size: 40px;
-  margin-bottom: 20px;
   color: #c5c6c9;
 
   @media (max-width: 800px) {
@@ -152,6 +152,37 @@ const ProfileImage = styled.img`
   }
 `;
 
+const StyledCvFile = styled(CvFile)`
+  width: 50px;
+  height: 50px;
+  fill: #c5c6c9;
+  transition: transform 1s ease-in-out;
+
+  &:hover {
+    fill: #4a90e2;
+  }
+`;
+
+const IconLink = styled.a`
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const AboutTitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
+
 function About() {
   const [isLoading, setIsLoading] = React.useState(true);
   const navigate = useNavigate();
@@ -160,7 +191,17 @@ function About() {
     <AboutContainer>
       <ContentContainer>
         <TextContainer>
-          <AboutTitle>About Me</AboutTitle>
+          <AboutTitleContainer>
+            <AboutTitle>About Me</AboutTitle>
+            <IconLink
+              href='https://drive.google.com/file/d/1ood1hOjXq-4nMWp_NCh3K0H5fza7eNea/view'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <StyledCvFile />
+            </IconLink>
+          </AboutTitleContainer>
+
           <AboutText>
             I'm a frontend developer from Belgrade, Serbia, and I've been into
             web development since 2019. I'm super passionate about it and always

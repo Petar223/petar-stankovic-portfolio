@@ -6,17 +6,12 @@ import Chip from '../../UIcomponents/Chip';
 import ChipContainer from '../../UIcomponents/ChipContainer';
 import SubTitle from '../../UIcomponents/SubTitle';
 import { skillIcons } from '../constants/constants';
+import { OpenExternalLinkIcon } from '../Icons';
 
 const Section = styled.section``;
 
 const Container = styled.div`
   padding: 20px;
-`;
-
-const TitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
 `;
 
 const List = styled.ul`
@@ -63,16 +58,45 @@ const ListItem = styled.li`
   }
 `;
 
+const CompanyHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+`;
+
 const CompanyTitle = styled.h3`
   font-size: 20px;
   color: #ffffff;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ffffff;
+  margin: 0;
 `;
 
 const ProjectContainer = styled.div`
   padding: 20px 0 0 0;
+`;
+
+const ProjectHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+
+const Duration = styled.span`
+  font-size: 14px;
+`;
+
+const StyledIcon = styled(OpenExternalLinkIcon)`
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+  transition: transform 1s ease-in-out;
+
+  &:hover {
+    fill: #4a90e2;
+  }
 `;
 
 function ProjectsList({
@@ -86,9 +110,12 @@ function ProjectsList({
       {data.map((item, index) => (
         <Container key={index}>
           {showCompany && (
-            <CompanyTitle>
-              {item.company} - {item.location} ({item.duration})
-            </CompanyTitle>
+            <CompanyHeader>
+              <CompanyTitle>
+                {item.company} - {item.location}
+              </CompanyTitle>
+              <Duration>{item.duration}</Duration>
+            </CompanyHeader>
           )}
 
           {showRoles &&
@@ -102,20 +129,21 @@ function ProjectsList({
 
           {item.projects.map((project, idx) => (
             <ProjectContainer key={idx}>
-              <TitleContainer>
+              <ProjectHeader>
                 <SubTitle>
-                  {project.name} {project.duration && `(${project.duration})`}
+                  {project.name}
+                  {showLink && project.link && (
+                    <Link
+                      href={project.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <StyledIcon />
+                    </Link>
+                  )}
                 </SubTitle>
-                {showLink && project.link && (
-                  <Link
-                    href={project.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Web App
-                  </Link>
-                )}
-              </TitleContainer>
+                {project.duration && <Duration>{project.duration}</Duration>}
+              </ProjectHeader>
 
               {project.description && <Text>{project.description}</Text>}
 

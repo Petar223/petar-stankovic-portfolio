@@ -134,6 +134,17 @@ export const data = {
       roles: null,
       projects: [
         {
+          name: 'Dokko filler',
+          link: 'https://master.d3b4iv7p0rq0yz.amplifyapp.com/',
+          duration: 'October 2024 – ongoing',
+          description:
+            'Frontend development for a platform automating contract generation.',
+          technologies: ['React.js', 'styled-components', 'Axios', 'Webpack'],
+          responsibilities: [
+            'Developed frontend side of a platform that automates contract generation, enabling faster and more efficient completion of various contract types, saving time and increase productivity. Made pilot project in cooperation with backend engineer.',
+          ],
+        },
+        {
           name: 'Cocktail App',
           duration: 'May 2024 – ongoing',
           description:
@@ -154,15 +165,15 @@ export const data = {
             'Collaborated with tech stack mentors for feature refinement and advanced technical guidance; also leveraged AWS EC2 instances to learn deployment processes and configured GitHub Actions for automated deployments',
           ],
         },
+
         {
-          name: 'Dokko filler',
-          link: 'https://master.d3b4iv7p0rq0yz.amplifyapp.com/',
-          duration: 'October 2024 – ongoing',
-          description:
-            'Frontend development for a platform automating contract generation.',
-          technologies: ['React.js', 'styled-components', 'Axios', 'Webpack'],
+          name: 'Movie-CLUB',
+          duration: 'February 2019 – September 2019',
+          description: 'A movie and TV series poster search application',
+          technologies: ['HTML5', 'CSS3', 'Vanilla JS (ES5, ES6)'],
+          github_link: 'https://github.com/Petar223/Movie-CLUB',
           responsibilities: [
-            'Developed frontend side of a platform that automates contract generation, enabling faster and more efficient completion of various contract types, saving time and increase productivity. Made pilot project in cooperation with backend engineer.',
+            'Completed this project as the final assignment to graduate from the course and earn a certificate, implementing dynamic element rendering in the DOM to enhance JavaScript interactivity, working with API calls and JSON data for efficient data fetching and manipulation, and developing a solid foundation in asynchronous programming.',
           ],
         },
       ],
@@ -173,12 +184,6 @@ export const data = {
       course: 'Frontend Development',
       institution: 'Code Academy, Comtrade Belgrade',
       duration: 'February 2019 – September 2019',
-      final_project: {
-        name: 'Movie-CLUB',
-        description: 'A movie and TV series poster search application',
-        technologies: ['HTML5', 'CSS3', 'Vanilla JS (ES5, ES6)'],
-        github_link: 'https://github.com/Petar223/Movie-CLUB',
-      },
     },
     {
       degree: 'Graduated Civil Engineer of Professional Studies',
