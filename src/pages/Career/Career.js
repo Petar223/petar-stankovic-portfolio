@@ -109,10 +109,10 @@ function Career() {
       </MiddleSectionContainer>
       <BottomSectionContainer>
         <SectionWrapper>
-          <PersonalProjects projects={data.personal_projects} />
+          <ProfessionalExperience experience={data.professional_experience} />
         </SectionWrapper>
         <SectionWrapper>
-          <ProfessionalExperience experience={data.professional_experience} />
+          <PersonalProjects projects={data.personal_projects} />
         </SectionWrapper>
       </BottomSectionContainer>
     </PageContainer>
