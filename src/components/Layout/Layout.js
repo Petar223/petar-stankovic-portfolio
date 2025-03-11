@@ -15,9 +15,10 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   transition: box-shadow 0.3s ease-in-out;
   z-index: 1000;
+  background: transparent;
 
   ${(props) =>
     props.scrolled &&
@@ -33,6 +34,7 @@ const Header = styled.header`
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
     }
     transition: box-shadow 0.5s ease-in-out;
+    backdrop-filter: blur(15px);
   `}
 `;
 

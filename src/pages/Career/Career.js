@@ -5,8 +5,6 @@ import TechnicalSkills from '../../components/TechnicalSkills/TechnicalSkills';
 import ProfessionalExperience from '../../components/ProfessionalExperience/ProfessionalExperience';
 import PersonalProjects from '../../components/PersonalProjects/PersonalProjects';
 import Education from '../../components/Education/Education';
-import Button from '../../UIcomponents/Button';
-import { useNavigate } from 'react-router-dom';
 import { data } from '../../constants/data';
 
 const slideFromTop = keyframes`
