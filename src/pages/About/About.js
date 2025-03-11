@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import Button from '../../UIcomponents/Button';
 import { useNavigate } from 'react-router-dom';
@@ -138,19 +138,48 @@ const ImageContainer = styled.div`
   }
 `;
 
-const spinAnimation = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-`;
+const SkeletonLoader = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 42, 42, 0.6) 25%,
+    rgba(58, 58, 58, 0.6) 50%,
+    rgba(42, 42, 42, 0.6) 75%
+  );
+  background-size: 400% 100%;
+  animation: skeletonLoading 1.5s infinite ease-in-out;
+  display: block;
 
-const LoadingSpinner = styled.div`
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid #fff;
-  border-radius: 50%;
-  animation: ${spinAnimation} 1s linear infinite;
-  position: absolute;
+  @keyframes skeletonLoading {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  @media (min-width: 801px) {
+    width: 400px;
+    height: 600px;
+    border-radius: 15px;
+  }
+
+  @media (max-width: 800px) and (min-width: 481px) {
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 450px;
+    min-height: 300px;
+    border-radius: 0;
+    display: block;
+  }
 `;
 
 const ProfileImage = styled.img`
@@ -179,7 +208,9 @@ const StyledCvFile = styled(CvFile)`
 `;
 
 const IconLink = styled.a`
-  margin-left: 10px;
+  position: absolute;
+  top: 22px;
+  right: 22px;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -199,7 +230,7 @@ const AboutTitleContainer = styled.div`
 `;
 
 function About() {
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   return (
@@ -208,13 +239,6 @@ function About() {
         <TextContainer>
           <AboutTitleContainer>
             <AboutTitle>About Me</AboutTitle>
-            <IconLink
-              href='https://drive.google.com/file/d/1ood1hOjXq-4nMWp_NCh3K0H5fza7eNea/view'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <StyledCvFile />
-            </IconLink>
           </AboutTitleContainer>
 
           <AboutText>
@@ -234,13 +258,20 @@ function About() {
           </AboutText>
         </TextContainer>
         <ImageContainer>
-          {isLoading && <LoadingSpinner />}
+          {isLoading && <SkeletonLoader />}
           <ProfileImage
             src={`${process.env.PUBLIC_URL}/images/profile.jpg`}
             alt='Profile'
             onLoad={() => setIsLoading(false)}
             isLoaded={!isLoading}
           />
+          <IconLink
+            href='https://drive.google.com/file/d/1ood1hOjXq-4nMWp_NCh3K0H5fza7eNea/view'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <StyledCvFile />
+          </IconLink>
         </ImageContainer>
       </ContentContainer>
       <ButtonContainer>
