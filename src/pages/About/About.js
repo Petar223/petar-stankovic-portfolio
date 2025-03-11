@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import Button from '../../UIcomponents/Button';
-import { useNavigate } from 'react-router-dom';
-import { CvFile } from '../../components/Icons';
 
 const slideFromLeft = keyframes`
   0% { opacity: 0; transform: translateX(-30px); }
@@ -12,11 +9,6 @@ const slideFromLeft = keyframes`
 const slideFromRight = keyframes`
   0% { opacity: 0; transform: translateX(30px); }
   100% { opacity: 1; transform: translateX(0); }
-`;
-
-const slideFromBottom = keyframes`
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
 `;
 
 const glitchEffect = keyframes`
@@ -179,17 +171,6 @@ const ProfileImage = styled.img`
   }
 `;
 
-const StyledCvFile = styled(CvFile)`
-  width: 50px;
-  height: 50px;
-  fill: #c5c6c9;
-  transition: transform 0.2s ease-in-out, fill 0.2s ease-in-out;
-
-  &:hover {
-    animation: ${glitchEffect} 0.5s infinite alternate;
-  }
-`;
-
 const IconLink = styled.a`
   position: absolute;
   top: 22px;
@@ -202,6 +183,7 @@ const IconLink = styled.a`
 
   &:hover {
     transform: scale(1.1);
+    animation: ${glitchEffect} 0.5s infinite alternate;
   }
 `;
 
@@ -210,6 +192,12 @@ const AboutTitleContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+`;
+
+const CvText = styled.span`
+  color: #c5c6c9;
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 function About() {
@@ -252,7 +240,7 @@ function About() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <StyledCvFile />
+            <CvText>View CV</CvText>
           </IconLink>
         </ImageContainer>
       </ContentContainer>
