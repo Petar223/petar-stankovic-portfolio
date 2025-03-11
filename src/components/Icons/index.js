@@ -24,5 +24,6 @@ export { default as Reduxsaga } from "./Reduxsaga";
 export { default as Sass } from "./Sass";
 export { default as Styledcomponents } from "./Styledcomponents";
 export { default as Tailwindcss } from "./Tailwindcss";
+export { default as ThreeHorizontalLinesIcon } from "./ThreeHorizontalLinesIcon";
 export { default as Typescript } from "./Typescript";
 export { default as Webpack } from "./Webpack";

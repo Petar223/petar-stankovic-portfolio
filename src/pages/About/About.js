@@ -42,7 +42,7 @@ const AboutContainer = styled.div`
   gap: 50px;
   flex-direction: column;
   overflow-y: auto;
-  min-height: 100vh;
+  // min-height: 100vh;
 
   @media (max-width: 800px) {
     padding: 10%;
@@ -52,23 +52,6 @@ const AboutContainer = styled.div`
   @media (max-width: 480px) {
     padding: 5%;
     gap: 20px;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: ${(props) => props.justify || 'space-between'};
-  gap: 10px;
-  animation: ${slideFromBottom} 1s ease-out forwards;
-
-  @media (max-width: 800px) {
-    width: 100%;
-  }
-
-  @media (max-width: 480px) {
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
   }
 `;
 
@@ -231,7 +214,6 @@ const AboutTitleContainer = styled.div`
 
 function About() {
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
 
   return (
     <AboutContainer>
@@ -274,10 +256,6 @@ function About() {
           </IconLink>
         </ImageContainer>
       </ContentContainer>
-      <ButtonContainer>
-        <Button onClick={() => navigate('/')}>Back to Home</Button>
-        <Button onClick={() => navigate('/career')}>Career Page</Button>
-      </ButtonContainer>
     </AboutContainer>
   );
 }
