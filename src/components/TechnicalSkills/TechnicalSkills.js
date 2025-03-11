@@ -12,7 +12,7 @@ const Section = styled.section`
 const IconContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-around;
   gap: 20px;
 `;
 
