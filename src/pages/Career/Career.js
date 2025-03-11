@@ -29,12 +29,12 @@ const PageContainer = styled.div`
 
   @media (max-width: 768px) {
     padding: 10px;
-    gap: 10px;
+    gap: 20px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     padding: 15px;
-    gap: 15px;
+    gap: 29px;
   }
 `;
 
