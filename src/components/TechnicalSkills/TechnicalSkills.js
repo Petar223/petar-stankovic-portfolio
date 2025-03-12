@@ -40,6 +40,7 @@ const IconWrapper = styled.div`
     width: 50px;
     height: 50px;
     fill: #c5c6c9;
+    color: #c5c6c9;
     transition: fill 0.2s ease-in-out;
   }
 `;
