@@ -29,6 +29,7 @@ export const data = {
     'Webpack',
     'styled-components',
     'Axios',
+    'Rxjs',
   ],
   professional_experience: [
     {
@@ -83,6 +84,7 @@ export const data = {
             'Sass',
             'Git',
             'Cypress',
+            'Rxjs',
           ],
           responsibilities: [
             'Responsible for development of key pages (targeting, summary, login and register); collaborated with designer in Figma, and independently redesigned with Material Design to enhance user experience.',
@@ -101,6 +103,7 @@ export const data = {
             'CSS',
             'Sass',
             'Git',
+            'Rxjs',
           ],
         },
         {

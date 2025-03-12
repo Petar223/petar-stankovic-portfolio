@@ -33,4 +33,5 @@ export const skillIcons = {
   GitHub: Icons.Github,
   HTML5: Icons.Html5,
   CSS3: Icons.Css,
+  Rxjs: Icons.Rxjs,
 };

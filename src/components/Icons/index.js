@@ -21,6 +21,8 @@ export { default as Nodedotjs } from "./Nodedotjs";
 export { default as OpenExternalLinkIcon } from "./OpenExternalLinkIcon";
 export { default as React } from "./React";
 export { default as Reduxsaga } from "./Reduxsaga";
+export { default as Rxjs1 } from "./Rxjs1";
+export { default as Rxjs } from "./Rxjs";
 export { default as Sass } from "./Sass";
 export { default as Styledcomponents } from "./Styledcomponents";
 export { default as Tailwindcss } from "./Tailwindcss";
