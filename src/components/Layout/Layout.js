@@ -112,21 +112,28 @@ function Layout({ children }) {
     <>
       <Header scrolled={scrolled}>
         <NavLinks>
-          <Button onClick={() => navigate('/')}>Home</Button>
-          <Button onClick={() => navigate('/about')}>About Me</Button>
-          <Button onClick={() => navigate('/career')}>Career Page</Button>
+          <Button onClick={() => navigate('/')} route='/'>
+            Home
+          </Button>
+          <Button onClick={() => navigate('/about')} route='/about'>
+            About Me
+          </Button>
+          <Button onClick={() => navigate('/career')} route='/career'>
+            Career Page
+          </Button>
         </NavLinks>
         <MenuIcon onClick={() => setMenuOpen(!menuOpen)}>
           <ThreeHorizontalLinesIcon />
         </MenuIcon>
       </Header>
-      {menuOpen && ( // Renderuj MobileMenu samo ako je menuOpen true
+      {menuOpen && (
         <MobileMenu open={menuOpen}>
           <Button
             onClick={() => {
               navigate('/');
               setMenuOpen(false);
             }}
+            route='/'
           >
             Home
           </Button>
@@ -135,6 +142,7 @@ function Layout({ children }) {
               navigate('/about');
               setMenuOpen(false);
             }}
+            route='/about'
           >
             About Me
           </Button>
@@ -143,6 +151,7 @@ function Layout({ children }) {
               navigate('/career');
               setMenuOpen(false);
             }}
+            route='/career'
           >
             Career Page
           </Button>

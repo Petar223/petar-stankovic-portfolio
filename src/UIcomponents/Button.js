@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import { useLocation } from 'react-router-dom';
+import styled, { keyframes, css } from 'styled-components';
 
 const glitchEffect = keyframes`
   0% {
@@ -24,7 +25,6 @@ const SlidingButton = styled.button`
   display: inline-block;
   outline: none;
   border: none;
-  border-radius: 5px;
   overflow: hidden;
   color: #c5c6c9;
   z-index: 0;
@@ -35,14 +35,24 @@ const SlidingButton = styled.button`
     animation: ${glitchEffect} 0.3s infinite alternate;
   }
 
+  ${({ active }) =>
+    active &&
+    css`
+      color: #fff;
+      font-weight: bold;
+    `}
+
   @media (max-width: 480px) {
     min-width: 100%;
   }
 `;
 
-const Button = ({ children, onClick, type = 'button' }) => {
+const Button = ({ children, onClick, type = 'button', route }) => {
+  const location = useLocation();
+  const isActive = location.pathname === route;
+
   return (
-    <SlidingButton onClick={onClick} type={type}>
+    <SlidingButton onClick={onClick} type={type} active={isActive}>
       {children}
     </SlidingButton>
   );
