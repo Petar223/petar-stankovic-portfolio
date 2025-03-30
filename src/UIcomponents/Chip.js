@@ -1,6 +1,7 @@
+import React, { memo } from 'react';
 import styled from 'styled-components';
 
-const Chip = styled.div`
+const ChipWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -18,5 +19,9 @@ const Chip = styled.div`
     fill: #c5c6c9;
   }
 `;
+
+const Chip = memo(({ children }) => {
+  return <ChipWrapper>{children}</ChipWrapper>;
+});
 
 export default Chip;

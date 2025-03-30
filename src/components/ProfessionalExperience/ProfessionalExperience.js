@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+
 import styled from 'styled-components';
 import Title from '../../UIcomponents/Title';
-import ProjectsList from '../ProjectList/ProjectList';
+import SkeletonProject from '../../UIcomponents/SkeletonProject';
+
+// const simulateDelay = (ms) => new Promise((res) => setTimeout(res, ms));
+const ProjectsList = lazy(() => import('../ProjectList/ProjectList'));
 
 const Section = styled.section``;
 
@@ -9,12 +13,14 @@ const ProfessionalExperience = ({ experience }) => {
   return (
     <Section>
       <Title>Professional Experience</Title>
-      <ProjectsList
-        data={experience}
-        title='Professional Experience'
-        showCompany={true}
-        showRoles={true}
-      />
+      <Suspense fallback={<SkeletonProject count={3} />}>
+        <ProjectsList
+          data={experience}
+          title='Professional Experience'
+          showCompany={true}
+          showRoles={true}
+        />
+      </Suspense>
     </Section>
   );
 };
