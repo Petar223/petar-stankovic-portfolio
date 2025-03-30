@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Title from '../../UIcomponents/Title';
 import SkeletonProject from '../../UIcomponents/SkeletonProject';
 
-// const simulateDelay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 const ProjectsList = lazy(() => import('../ProjectList/ProjectList'));
 
 const Section = styled.section``;

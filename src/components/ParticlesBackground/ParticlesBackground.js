@@ -1,17 +1,28 @@
-import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { useEffect, useMemo, useState } from 'react';
-import particlesConfig from './config/particles-config';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import particlesConfig from './config/particles-config';
+import styled from 'styled-components';
+import useIsMobile from '../../hooks/useIsMobile';
 
-const ParticlesBackground = (props) => {
+const BackgroundFallback = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(4, 3, 54);
+`;
+
+const ParticlesBackground = ({ id }) => {
   const [init, setInit] = useState(false);
+  const isMobile = useIsMobile();
+
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
+    if (!isMobile) {
+      initParticlesEngine(async (engine) => {
+        await loadSlim(engine);
+      }).then(() => setInit(true));
+    }
+  }, [isMobile]);
 
   const particlesLoaded = (container) => {
     console.log(container);
@@ -19,7 +30,11 @@ const ParticlesBackground = (props) => {
 
   const options = useMemo(() => particlesConfig, []);
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  if (isMobile) {
+    return <BackgroundFallback />;
+  }
+
+  return <Particles id={id} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesBackground;
