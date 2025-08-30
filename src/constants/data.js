@@ -138,7 +138,8 @@ export const data = {
       projects: [
         {
           name: 'Dokko filler',
-          link: 'https://master.d3b4iv7p0rq0yz.amplifyapp.com/',
+          // link: 'https://master.d3b4iv7p0rq0yz.amplifyapp.com/',
+          link: null,
           duration: 'October 2024 – ongoing',
           description:
             'Frontend development for a platform automating contract generation.',

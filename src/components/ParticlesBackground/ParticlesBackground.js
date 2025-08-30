@@ -13,7 +13,7 @@ const BackgroundFallback = styled.div`
 `;
 
 const ParticlesBackground = ({ id }) => {
-  const [init, setInit] = useState(false);
+  const [, setInit] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -24,17 +24,13 @@ const ParticlesBackground = ({ id }) => {
     }
   }, [isMobile]);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   const options = useMemo(() => particlesConfig, []);
 
   if (isMobile) {
     return <BackgroundFallback />;
   }
 
-  return <Particles id={id} init={particlesLoaded} options={options} />;
+  return <Particles id={id} options={options} />;
 };
 
 export default ParticlesBackground;
