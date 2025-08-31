@@ -24,7 +24,6 @@ const IconWrapper = styled.div`
   width: 50px;
   height: 50px;
   margin: 10px;
-  cursor: pointer;
   transition: transform 0.2s ease-in-out;
 
   &:hover {
